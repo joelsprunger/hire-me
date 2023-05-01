@@ -2,7 +2,7 @@
 
 ## Architecture
 ### Frontend
-Flask templates extended from base.html with calls to bootstrap for styling and animation
+Flask templates extended from base.html with [bootstrap](https://getbootstrap.com/) calls for styling and animation
 
 ### Backend
 Python Flask for rendering html from templates
