@@ -1,7 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Joel Sprunger</h1>
-  <p>An engineer with a broad range of skills and interests</p>
-  Ask me about my background, or browse this website.
+<div class="h-100 p-5 bg-body-tertiary border rounded-3">
+  <div class="container-fluid py-5">
+    <h1>Joel Sprunger</h1>
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+          <label for="question1" class="form-label">Ask me questions about my background</label>
+          {{ form.question(class="form-control", placeholder="Question", id="question1") }}
+        </div>
+        <div class="mb-3">
+        {{ form.submit(class="btn btn-outline-secondary") }}
+        </div>
+      </form>
+    {% for mess in get_flashed_messages() %}
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+      {{ mess }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+  {% if qa %}
+<div class="h-100 p-5 bg-body-tertiary border rounded-3">
+  <div class="container-fluid py-5">
+    <h3>Previous questions...</h3>
+    <ul>
+      {% for pair in qa[::-1] %}
+        <li>Q: {{ pair[0] }}</li>  
+        <li>A: {{ pair[1] }}</li>  
+        <br>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+  {% endif %}
 {% endblock content %}
