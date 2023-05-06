@@ -9,9 +9,8 @@
         <div class="mb-3">
           <label for="question1" class="form-label">Ask me questions about my background</label>
           {{ form.question(class="form-control", placeholder="Question", id="question1") }}
-        </div>
-        <div class="mb-3">
-        {{ form.submit(class="btn btn-outline-secondary") }}
+          <br>
+          {{ form.submit(class="btn btn-outline-secondary") }}
         </div>
       </form>
     {% for mess in get_flashed_messages() %}
