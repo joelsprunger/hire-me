@@ -6,7 +6,7 @@ from langchain.llms import OpenAI
 # from CustomLLM import *
 # llm = CustomLLM()
 
-with open('website/sprunger_resume.md') as f:
+with open('website/sprunger_resume.txt') as f:
     file_text = f.read()
 sources = [Document(page_content=file_text, metadata={"source": "Joel's resume"})]
 

@@ -1,0 +1,69 @@
+Summary
+Staff Engineer with an MS in Electrical and Computer Engineering and history of innovation in signal processing
+and machine learning across industries. Determined, analytical, and knowledgeable problem-solver with proficiency
+in Python, Matlab, C/C++, Verilog/VHDL, and LabVIEW with strong cross-functional teamwork and relationship
+building skills. Seeking to leverage talents in a DSP engineering role at a future-forward company to build innovative
+products and consumer experiences. Always curious, and not afraid of hard work.
+
+Skills
+	Programming Languages: Python, C/C++, Matlab, VB
+    Frameworks: Tensorflow, Pytorch
+    Libraries: Keras, Pandas, NumPy, Matplotlib, Seaborn, Soundfile, Librosa
+    IT: Linux, Mac OS, windows, Shell Scripting, Productivity Suites (Excel, Outlook, etc)
+    Dev Tools: Visual Code Studio, PyCharm, CLion, Git, Github, Docker
+    ML: Linear Regression, Logistic Regression, Gradient Descent, Optimum Algorithms, K-means Clustering, Recommendation Systems, Anomaly Detection, Support Vector Machines, AWS, Amazon Mechanical Turk
+    Signal Processing: Spectral Analysis (FFT, PSD), STFT, WOLA, Digital Filters, Adaptive Filters, State Space Tracking, Image Processing, Array Processing, Communication Systems: AM/FM/PM, FSK, PSK, CDMA, Audio Signal Processing: AEC, Beamforming, Noise Suppression, ANC, Noise Gate, AGC.
+
+Professional Experience
+Staff Machine Learning Engineer, Skyworks Solutions Inc.
+Hillsboro, OR — 2019-2023
+    • Developed machine learning models using Python, Tensorflow, Keras, and Pytorch for audio Noise Suppression
+    • Designed custom algorithm layers using Python, Tensorflow, and Keras for custom losses and pre -processing - Weighted Overlap Add (WOLA) layers - Noise Gate - Spectral Noise Gate - SNR estimator - AI model back-off algorithm
+    • Evaluated model performance using Amazon Mechanical Turk in the Microsoft P.808 library on Github
+    • Developed tool for analysing/presenting model performance using Flask, Matplotlib , and Seaborn
+    • Deployed model to Arm M55+ EthosU55 FPGA dev kit with C++ to benchmark Arm processors for audio noise
+    suppression, influencing selection of hardware target processor/co-processor
+    • Designed DSP algorithms for audio applications including snore presence and location estimation using mic. arrays
+    (provisional patent) using Matlab and C, User voice activity detection (VAD) based on multi-modal audio signals using
+    Matlab, and Design algorithm using Matlab and C++ to detect failure mode for production testing team
+    • Built software in Linux and Github/Git revision control
+    • Developed noise gate algorithm as Keras layer in Python/TensorFlow and trained model with noise-gated files to learn
+    noise gate task, improving model performance in statistically significant way
+    • Conducted Amazon Mechanical Turk study to identify ways to clean target files for AI noise suppression application,
+    determining noise-gated speech as user preference
+    • Oversaw smart bed with snore detection project and implementation of hardware for novel application, resulting in
+    new algorithm and customer satisfaction
+Senior MTS Test System Development, Maxim Integrated Products Inc.
+Beaverton, OR — 2013-2019
+    • Led test engineer for Class-D amplifier ASICs for tier-1 customers and developed software in VB for production testing of integrated circuits
+    • Wrote patterns for digital audio communication (PCM,PDM) and conducted signal processing for testing audio quality (THDN, PSRR, DR)
+    • Resolved issues and debugged hardware/software for important client alongside VP of Engineering, resulting in successful IC launch and satisfied customer
+    • Produced schematic design for PCB test hardware, statistical analysis of production data, and technical writing
+    • Collaborated with team to develop DSP functionality using Verilog syntax for capturing high frequency test signals on test platform, building custom hardware without expending excess resources
+Certifications
+Data Science
+    Data Science Foundations By LinkedIn
+Programming Foundations: Databases By LinkedIn
+    Learning SQL Programming By LinkedIn
+Machine Learning:
+    Machine Learning By Stanford University on Coursera
+    Neural Networks and Deep Learning By deeplearning.ai on Coursera
+    Improving Deep Neural Networks By deeplearning.ai on Coursera
+    Structuring Machine Learning Projects By deeplearning.ai on Coursera
+    Intro to ML: Language Processing By Google Qwiklabs
+    Getting Started with AWS Machine Learning By Amazon on Coursera
+Education:
+    -Portland State University, Portland, Oregon
+        M.S. Electrical and Computer Engineering, Year graduated: 2019, (GPA: 3.7)
+    -Oregon Institute of Technology, Wilsonville, Oregon
+        B.S. Electronic Engineering Technology, Year graduated: 2011, (GPA: 4.0)
+Awards and Associations:
+    Outstanding Scholar Award, Oregon Institute of Technology, 2011
+    Student Achievement Award, Oregon Institute of Technology, 2011
+    IEEE (Institute of Electrical and Electronics Engineers), Member
+References
+    Skyworks:
+        Amit Kumar - (408) 318 - 1047
+        Alexander Kain - lxkain@me.com
+    Maxim Integrated
+        Rafael Colon - (503) 504 - 0072
