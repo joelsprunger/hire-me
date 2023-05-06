@@ -1,12 +1,8 @@
 from flask import render_template, Blueprint, flash
 from .forms import QuestionForm
-#from ..ai_service.ai_answers import string_answer
+from ..ai_service.ai_answers import string_answer
 core = Blueprint("core", __name__)
 qa = []
-
-
-def string_answer(question: str):
-    return "This is a test answer"
 
 
 @core.route("/", methods=["GET", "POST"])
