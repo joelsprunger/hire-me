@@ -15,7 +15,11 @@
       </form>
     {% for mess in get_flashed_messages() %}
       <div class="alert alert-info alert-dismissible fade show" role="alert">
-      {{ mess }}
+        {% if "resume" in mess %}
+          {{ mess.split('resume')[0] }}<a href="{{ url_for('core.download_resume') }}" target="_blank">resume</a>
+        {% else %}
+          {{ mess }}
+        {% endif %}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     {% endfor %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="h-100 p-5 bg-body-tertiary border rounded-3">
+  <div class="container-fluid py-5">
+    <h1>About this website</h1>
+    <h3>Frontend</h3>
+    <ul>
+      <li>HTML is rendered from Flask templates, these are extended from a base template</li>
+      <li>Styling and animations provided by <a href="https://getbootstrap.com/" target="_blank">bootstrap</a> calls in base template</li>
+    </ul>
+    <h3>Backend</h3>
+    <ul>
+      <li>Python Flask</li>
+      <li>Blueprints, flask-wtf, and wtforms for managing forms and views</li>
+      <li>Langchain with OpenAI api for answering questions</li>
+    </ul>
+    <h3>Deployment</h3>
+    <li>Docker image for testing locally</li>
+    <li>Hosted on GCP Cloud Run</li>
+    <li>CI/CD: a build/deploy on Cloud Run is triggered whenever a revision is pushed to GitHub</li>
+    <h3>Source Code</h3>
+    get it <a href="https://github.com/joelsprunger/personal-website" target="_blank">here</a>
+
+
+  </div>
+</div>
+
+{% endblock content %}
