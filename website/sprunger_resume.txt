@@ -1,3 +1,8 @@
+Joel Sprunger
+Contact
+    cell: (503) 537-8046
+    email: sprunger.joel@gmail.com
+
 Summary
 Staff Engineer with an MS in Electrical and Computer Engineering and history of innovation in signal processing
 and machine learning across industries. Determined, analytical, and knowledgeable problem-solver with proficiency
@@ -61,7 +66,7 @@ Awards and Associations:
     Outstanding Scholar Award, Oregon Institute of Technology, 2011
     Student Achievement Award, Oregon Institute of Technology, 2011
     IEEE (Institute of Electrical and Electronics Engineers), Member
-References
+References:
     Skyworks:
         Amit Kumar - (408) 318 - 1047
         Alexander Kain - lxkain@me.com
