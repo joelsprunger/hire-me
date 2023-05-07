@@ -3,14 +3,23 @@
 {% block content %}
 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
   <div class="container-fluid py-5">
-    <h1>Joel Sprunger</h1>
+    <h1>Interview Joel</h1>
       <form method="POST">
         {{ form.hidden_tag() }}
+        <label for="question1" class="form-label">Ask me questions about my background</label>
+        <br>
         <div class="mb-3">
-          <label for="question1" class="form-label">Ask me questions about my background</label>
+          <div class="input-group">
           {{ form.question(class="form-control", placeholder="Question", id="question1") }}
-          <br>
-          {{ form.submit(class="btn btn-outline-secondary") }}
+          {% if qa|length >= 2 %}
+            {{ form.submit(class="btn btn-outline-info active") }}
+            <a type="button"
+                    class="btn btn-outline-info"
+                    href="mailto:sprunger.joel@gmail.com? &subject=Schedule an interview">Hire me</a>
+          {% else %}
+          {{ form.submit(class="btn btn-outline-info") }}
+          {% endif %}
+          </div>
         </div>
       </form>
     {% for mess in get_flashed_messages() %}

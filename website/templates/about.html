@@ -3,7 +3,9 @@
 {% block content %}
 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
   <div class="container-fluid py-5">
-    <h1>About this website</h1>
+    <h1>About this app</h1>
+    <p>This app is powered by AI to read my resume, so you don't have to.
+      Instead, you can interview me and this app will answer questions based ont he content of my resume</p>
     <h3>Frontend</h3>
     <ul>
       <li>HTML is rendered from Flask templates, these are extended from a base template</li>
@@ -16,11 +18,13 @@
       <li>Langchain with OpenAI api for answering questions</li>
     </ul>
     <h3>Deployment</h3>
-    <li>Docker image for testing locally</li>
-    <li>Hosted on GCP Cloud Run</li>
-    <li>CI/CD: a build/deploy on Cloud Run is triggered whenever a revision is pushed to GitHub</li>
+    <ul>
+      <li>Docker image for testing locally</li>
+      <li>Hosted on GCP Cloud Run</li>
+      <li>CI/CD: a build/deploy on Cloud Run is triggered whenever a revision is pushed to GitHub</li>
+    </ul>
     <h3>Source Code</h3>
-    get it <a href="https://github.com/joelsprunger/personal-website" target="_blank">here</a>
+    This project is available on <a href="https://github.com/joelsprunger/personal-website" target="_blank">GitHub</a>
 
 
   </div>
