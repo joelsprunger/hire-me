@@ -14,9 +14,9 @@
           {{ form.question(class="form-control", placeholder=question, id="question1") }}
           {% if qa|length >= 2 %}
             {{ form.submit(class="btn btn-outline-info active") }}
-            <a type="button"
-                    class="btn btn-outline-info"
-                    href="mailto:sprunger.joel@gmail.com? &subject=Schedule an interview">Hire me</a>
+            <button class="btn btn-outline-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEmail" aria-controls="offcanvasExample">
+              Hire me
+            </button>
           {% else %}
           {{ form.submit(class="btn btn-outline-info") }}
           {% endif %}
@@ -76,5 +76,38 @@
   </div>
 </div>
 
+<!-- email offcanvas form -->
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasEmail" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Contact Joel to set up a real interview
+      <form method="POST">
+        </div>
+        {{ email_form.hidden_tag() }}
+        <div class="mb-3">
+          {{ email_form.email.label(class="form-label") }} {{ email_form.email(class="form-control", placeholder="example@email.com") }}
+        </div>
+        <div class="mb-3">
+          {{ email_form.subject.label(class="form-label") }} {{ email_form.subject(class="form-control", placeholder="Set up an interview") }}
+        </div>
+        <div class="mb-3">
+          {{ email_form.body.label(class="form-label") }} {{ email_form.body(class="form-control") }}
+        </div>
+        <div class="mb-3">
+          {{ email_form.submit() }}
+        </div>
+      </form>
+      <div class="mb-3">
+        {% if email_sent %}
+          <h2>Email sent</h2>
+        {% endif %}
+      </div>
+  </div>
+</div>
 
 {% endblock content %}

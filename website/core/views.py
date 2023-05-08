@@ -1,6 +1,7 @@
 from flask import render_template, Blueprint, flash, send_file, send_from_directory
-from .forms import QuestionForm
+from .forms import QuestionForm, EmailForm
 from ..ai_service.ai_answers import string_answer
+from .. import mail, Message
 
 core = Blueprint("core", __name__)
 
@@ -13,11 +14,13 @@ intro_message: bool = True
 @core.route("/", methods=["GET", "POST"])
 def index():
     form = QuestionForm()
+    email_form = EmailForm()
     if questions:
         question = qa_list[-1][0]  # Use most recent question
     else:
         question = "Question"  # Use initial prompt
 
+    # process Q/A form
     if form.validate_on_submit():
         question = form.question.data
         form.question.data = None  # clear form so that placeholder question is shown
@@ -28,7 +31,18 @@ def index():
         answer = questions[question]
         flash(answer)
         qa_list.append((question, answer))
-    return render_template("index.html", form=form, qa=qa_list, question=question)
+
+    # process Email form
+    if email_form.validate_on_submit():
+        msg = Message(email_form.subject.data, sender='sprunger.joel@gmail.com', recipients=[email_form.email.data])
+        msg.body = email_form.body.data
+        mail.send(msg)
+
+    return render_template("index.html",
+                           form=form,
+                           qa=qa_list,
+                           question=question,
+                           email_form=email_form)
 
 
 @core.route("/about")

@@ -1,10 +1,23 @@
-# import os
 from flask import Flask
+from flask_mail import Mail, Message
+from os import environ
+
 # from flask_migrate import Migrate
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_login import LoginManager
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = environ.get("SECRET_KEY")
+
+app.config.update(dict(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=465,
+    MAIL_USE_TLS=False,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME=environ.get("EMAIL"),
+    MAIL_PASSWORD=environ.get("EMAIL_PW")))
+
+mail = Mail(app)
 
 # # database setup
 # app.config['SECRET_KEY'] = "mysecretkey"
@@ -20,8 +33,8 @@ app = Flask(__name__)
 # login_manager.init_app(app)
 # login_manager.login_view = "users.login"
 
-from . core.views import core
-from . error_pages.handlers import error_pages
+from .core.views import core
+from .error_pages.handlers import error_pages
 
 app.register_blueprint(core)
 app.register_blueprint(error_pages)
