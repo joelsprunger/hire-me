@@ -1,0 +1,17 @@
+About this app:
+    Summary:
+        This app is powered by AI to read my resume, so you don't have to. Ask questions about my background and this app will answer your questions based on the content of my resume.
+    Frontend:
+      HTML is rendered from Flask templates, these are extended from a base template
+      Styling and animations provided by bootstrap calls in base template
+    Backend:
+        Python Flask
+        Blueprints, flask-wtf, and wtforms for managing forms and views
+        Langchain with OpenAI api is used for answering questions. Initially a light-weight open-source LLM was used, and verified on google colab, but
+        running serverless, there are no GPUs available and it was running very slow on CPU.
+    Deployment:
+        Docker image for testing locally
+        Hosted on GCP Cloud Run
+        CI/CD: a build/deploy on Cloud Run is triggered whenever a revision is pushed to GitHub
+    Source Code:
+        This project is available on GitHub: https://github.com/joelsprunger/personal-website

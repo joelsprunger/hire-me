@@ -7,8 +7,13 @@ from langchain.llms import OpenAI
 # llm = CustomLLM()
 
 with open('website/sprunger_resume.txt') as f:
-    file_text = f.read()
-sources = [Document(page_content=file_text, metadata={"source": "Joel's resume"})]
+    file_text_resume = f.read()
+with open('website/about_this_app.txt') as f:
+    file_text_about = f.read()
+sources = [
+            Document(page_content=file_text_resume, metadata={"source": "Joel's resume"}),
+            Document(page_content=file_text_about, metadata={"source": "About"})
+           ]
 
 # chain = load_qa_with_sources_chain(llm)
 chain = load_qa_with_sources_chain(OpenAI(temperature=0))

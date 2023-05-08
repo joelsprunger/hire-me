@@ -25,8 +25,10 @@
       </form>
     {% for mess in get_flashed_messages() %}
       <div class="alert alert-info alert-dismissible fade show" role="alert">
-        {% if "resume" in mess %}
+        {% if "Joel's resume" in mess %}
           {{ mess.split('resume')[0] }}<a href="{{ url_for('core.download_resume') }}" target="_blank">resume</a>
+        {% elif "SOURCES: About" in mess %}
+          {{ mess.split('About')[0] }}<a href="{{ url_for('core.about') }}">About</a>
         {% else %}
           {{ mess }}
         {% endif %}

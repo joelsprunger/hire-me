@@ -33,7 +33,7 @@ def index():
         form.question.data = None  # clear form so that placeholder question is shown
         # check for repeated question
         if question not in session["questions"]:
-            answer = string_answer(question, "TEST")
+            answer = string_answer(question)
             session["questions"][question] = answer
         answer = session["questions"][question]
         flash(answer)
