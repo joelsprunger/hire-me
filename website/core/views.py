@@ -15,8 +15,6 @@ intro_message: bool = True
 @core.route("/", methods=["GET", "POST"])
 def index():
     # initialize new session
-    if "n_questions" not in session.keys():
-        session["n_questions"]: int = 0
     if "questions" not in session.keys():
         session["questions"]: dict = {}
     if "qa_list" not in session.keys():
@@ -25,20 +23,17 @@ def index():
     form = QuestionForm()
     email_form = EmailForm()
     if session["questions"]:
-        question = qa_list[-1][0]  # Use most recent question
+        question = session["qa_list"][-1][0]  # Use most recent question
     else:
         question = "Question"  # Use initial prompt
 
     # process Q/A form
-    n_questions = session["n_questions"]
     if form.validate_on_submit():
-        n_questions += 1
-        session["n_questions"] = n_questions
         question = form.question.data
         form.question.data = None  # clear form so that placeholder question is shown
         # check for repeated question
         if question not in session["questions"]:
-            answer = string_answer(question)
+            answer = string_answer(question, "TEST")
             session["questions"][question] = answer
         answer = session["questions"][question]
         flash(answer)
@@ -54,7 +49,7 @@ def index():
                            form=form,
                            qa=session["qa_list"],
                            question=question,
-                           n_questions=n_questions,
+                           n_questions=len(session["qa_list"]),
                            email_form=email_form)
 
 
