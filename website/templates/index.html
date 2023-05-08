@@ -10,7 +10,7 @@
         <br>
         <div class="mb-3">
           <div class="input-group">
-          {{ form.question(class="form-control", placeholder="Question", id="question1") }}
+          {{ form.question(class="form-control", placeholder=question, id="question1") }}
           {% if qa|length >= 2 %}
             {{ form.submit(class="btn btn-outline-info active") }}
             <a type="button"
