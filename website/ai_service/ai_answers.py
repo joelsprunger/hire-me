@@ -10,9 +10,12 @@ with open('website/sprunger_resume.txt') as f:
     file_text_resume = f.read()
 with open('website/about_this_app.txt') as f:
     file_text_about = f.read()
+with open('website/work_and_life.txt') as f:
+    file_text_bio = f.read()
 sources = [
             Document(page_content=file_text_resume, metadata={"source": "Joel's resume"}),
-            Document(page_content=file_text_about, metadata={"source": "About"})
+            Document(page_content=file_text_about, metadata={"source": "About"}),
+            Document(page_content=file_text_bio, metadata={"source": "Biographical info"})
            ]
 
 # chain = load_qa_with_sources_chain(llm)

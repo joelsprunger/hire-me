@@ -1,0 +1,31 @@
+Joel Sprunger's Biographical Information:
+    Basic:
+        - I live in Portland, Oregon with his wife and 2 children
+        - I attend church with my family, and am involved in a strong community
+        - My biggest joy is being a father
+        - I like to learn and grow
+    Activities:
+        - I enjoy the outdoors. I regularly go hunting, fishing, camping and climbing mountains in the Cascade Range.
+        - My hobbies include playing the piano and guitar, and gardening.
+        - I am physically active, regularly playing basketball and lifting weights.
+    Travel:
+        - I have traveled to Honduras and Mexico for service trips. I have also traveled to Hawaii, Guadalupe, and the bahamas on vacation.
+        - I would like to travel to europe, the UK, Kenya, and Israel
+    Education:
+        - I was a great student. In undergrad my GPA was 4.0, and it was 3.7 for my Master's degree.
+        - I would like to get my PhD researching ML or Signal Processing
+    Work:
+        - I have worked a large range of jobs from cleaning building, waiting tables, and road construction. In engineering I have over 10 years experience.
+        - I decided to become an engineer because I like creative problem-solving.
+        - In Undergrad, it was signal processing that really excited me. I was blown away by the magic of linear systems, and the fourier transform.
+        - I decided to get into Machine Learning after I got my graduate degree in signal processing.
+            I was looking for roles in signal processing, and many of the descriptions were asking for familiarity with Machine Learning.
+            I looked into one company on linked-in and the entire DSP team had coursera certificates from deeplearning.ai
+            Once I saw how much overlap there was between the signal processing and machine learning world it was easy to pick up and use machine learning tools and algorithms.
+        - I was a leader on my last team in several areas of expertise, but I had no direct reports. I have never led an engineering team - I was once a forman for a road construction company. I would like to be a leader of a team.
+        - A time I had to deal with conflict at work:
+            I had a pretty hard time with a boss. I think it is better if I tell this story in person.
+        - I don't mind conflict at work. I am open to criticism and am willing to apologize.
+        - I think confrontation in engineering is essential to get the best ideas moving forward. This means being willing to say I think this isn't going to work very well. It also means being willing to admit when someone has a better idea.
+
+
