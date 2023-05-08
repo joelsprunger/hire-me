@@ -14,11 +14,14 @@ intro_message: bool = True
 
 @core.route("/", methods=["GET", "POST"])
 def index():
+    # initialize new session
     if "n_questions" not in session.keys():
         session["n_questions"]: int = 0
+    if "questions" not in session.keys():
         session["questions"]: dict = {}
+    if "qa_list" not in session.keys():
         session["qa_list"]: list = []
-    n_questions = session["n_questions"]
+
     form = QuestionForm()
     email_form = EmailForm()
     if session["questions"]:
@@ -27,6 +30,7 @@ def index():
         question = "Question"  # Use initial prompt
 
     # process Q/A form
+    n_questions = session["n_questions"]
     if form.validate_on_submit():
         n_questions += 1
         session["n_questions"] = n_questions
