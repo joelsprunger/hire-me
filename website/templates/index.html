@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
   <div class="container-fluid py-5">
     <h1>Interview Joel</h1>
@@ -49,4 +50,31 @@
   </div>
 </div>
   {% endif %}
+
+
+<!--Intro modal-->
+{% if qa | length == 0 %}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
+{% endif %}
+
+<div id=myModal class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Welcome</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This app is powered by a language model. It looks at my resume and other sources to answer questions about my background</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% endblock content %}

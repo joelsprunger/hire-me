@@ -6,6 +6,8 @@ core = Blueprint("core", __name__)
 
 questions: dict = {}  # ordered dict eliminates repeated calls with the same question
 qa_list: list = []    # ordered list allows for printing questions in reverse order and repeated questions
+start: bool = True
+intro_message: bool = True
 
 
 @core.route("/", methods=["GET", "POST"])
@@ -26,7 +28,6 @@ def index():
         answer = questions[question]
         flash(answer)
         qa_list.append((question, answer))
-
     return render_template("index.html", form=form, qa=qa_list, question=question)
 
 
