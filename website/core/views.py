@@ -4,23 +4,30 @@ from ..ai_service.ai_answers import string_answer
 
 core = Blueprint("core", __name__)
 
-qa = []
+questions: dict = {}  # ordered dict eliminates repeated calls with the same question
+qa_list: list = []    # ordered list allows for printing questions in reverse order and repeated questions
 
 
 @core.route("/", methods=["GET", "POST"])
 def index():
     form = QuestionForm()
-    if qa:
-        question = qa[-1][0]  # Use most recent question
+    if questions:
+        question = qa_list[-1][0]  # Use most recent question
     else:
         question = "Question"  # Use initial prompt
+
     if form.validate_on_submit():
         question = form.question.data
         form.question.data = None  # clear form so that placeholder question is shown
-        answer = string_answer(question)
-        qa.append((question, answer))
+        # check for repeated question
+        if question not in questions:
+            answer = string_answer(question)
+            questions[question] = answer
+        answer = questions[question]
         flash(answer)
-    return render_template("index.html", form=form, qa=qa, question=question)
+        qa_list.append((question, answer))
+
+    return render_template("index.html", form=form, qa=qa_list, question=question)
 
 
 @core.route("/about")

@@ -40,9 +40,9 @@
   <div class="container-fluid py-5">
     <h3>Previous questions...</h3>
     <ul>
-      {% for pair in qa[::-1] %}
-        <li>Q: {{ pair[0] }}</li>  
-        <li>A: {{ pair[1] }}</li>  
+      {% for qa_tuple in qa[::-1] %}
+        <li>Q: {{ qa_tuple[0] }}</li>
+        <li>A: {{ qa_tuple[1] }}</li>
         <br>
       {% endfor %}
     </ul>
