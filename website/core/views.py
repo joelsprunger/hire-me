@@ -6,7 +6,7 @@ from random import randint as randi
 
 core = Blueprint("core", __name__)
 
-questions: dict[dict] = {}  # ordered dict eliminates repeated calls with the same question
+questions: dict = {}  # ordered dict eliminates repeated calls with the same question
 qa_list: list = []    # ordered list allows for printing questions in reverse order and repeated questions
 start: bool = True
 intro_message: bool = True
@@ -15,11 +15,13 @@ intro_message: bool = True
 @core.route("/", methods=["GET", "POST"])
 def index():
     if "n_questions" not in session.keys():
-        session["n_questions"] = 0
+        session["n_questions"]: int = 0
+        session["questions"]: dict = {}
+        session["qa_list"]: list = []
     n_questions = session["n_questions"]
     form = QuestionForm()
     email_form = EmailForm()
-    if questions:
+    if session["questions"]:
         question = qa_list[-1][0]  # Use most recent question
     else:
         question = "Question"  # Use initial prompt
@@ -31,12 +33,12 @@ def index():
         question = form.question.data
         form.question.data = None  # clear form so that placeholder question is shown
         # check for repeated question
-        if question not in questions:
+        if question not in session["questions"]:
             answer = string_answer(question)
-            questions[question] = answer
-        answer = questions[question]
+            session["questions"][question] = answer
+        answer = session["questions"][question]
         flash(answer)
-        qa_list.append((question, answer))
+        session["qa_list"].append((question, answer))
 
     # process Email form
     if email_form.validate_on_submit():
@@ -46,7 +48,7 @@ def index():
 
     return render_template("index.html",
                            form=form,
-                           qa=qa_list,
+                           qa=session["qa_list"],
                            question=question,
                            n_questions=n_questions,
                            email_form=email_form)
