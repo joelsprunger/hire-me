@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-
+{% block scripts %}
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{% endblock %}
 {% block content %}
 
 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
@@ -54,16 +56,6 @@
   {% endif %}
 
 
-<!--Intro modal-->
-{% if n_questions == 0 %}
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-	$(document).ready(function(){
-		$("#myModal").modal('show');
-	});
-</script>
-{% endif %}
-
 <div id=myModal class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -89,8 +81,9 @@
     <div>
       Contact Joel to set up a real interview
       <form method="POST">
-        </div>
+        <div class="mb-3">
         {{ email_form.hidden_tag() }}
+        </div>
         <div class="mb-3">
           {{ email_form.email.label(class="form-label") }} {{ email_form.email(class="form-control", placeholder="example@email.com") }}
         </div>
@@ -111,5 +104,15 @@
       </div>
   </div>
 </div>
+
+
+<!--Intro modal-->
+{% if n_questions == 0 %}
+<script>
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
+{% endif %}
 
 {% endblock content %}
