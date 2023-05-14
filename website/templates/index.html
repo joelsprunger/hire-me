@@ -27,34 +27,29 @@
       </form>
     {% for mess in get_flashed_messages() %}
       <div class="alert alert-info alert-dismissible fade show" role="alert">
-        {% if "Joel's resume" in mess %}
-          {{ mess.split('resume')[0] }}<a href="{{ url_for('core.download_resume') }}" target="_blank">resume</a>
-        {% elif "SOURCES: About" in mess %}
-          {{ mess.split('About')[0] }}<a href="{{ url_for('core.about') }}">About</a>
-        {% else %}
-          {{ mess }}
-        {% endif %}
+        {{ mess|safe }}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     {% endfor %}
 
-  </div>
-</div>
+
   {% if qa %}
-<div class="h-100 p-5 bg-body-tertiary border rounded-3">
-  <div class="container-fluid py-5">
     <h3>Previous questions...</h3>
+<!--<div class="h-100 p-5 bg-body-tertiary border rounded-3">-->
+<!--  <div class="container-fluid py-5">-->
+
     <ul>
       {% for qa_tuple in qa[::-1] %}
         <li>Q: {{ qa_tuple[0] }}</li>
-        <li>A: {{ qa_tuple[1] }}</li>
+        <li>A: {{ qa_tuple[1]|safe }}</li>
         <br>
       {% endfor %}
     </ul>
+<!--  </div>-->
+<!--</div>-->
+  {% endif %}
   </div>
 </div>
-  {% endif %}
-
 
 <div id=myModal class="modal">
   <div class="modal-dialog">

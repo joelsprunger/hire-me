@@ -2,21 +2,36 @@ from typing import Union
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 from langchain.docstore.document import Document
 from langchain.llms import OpenAI
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.vectorstores.faiss import FAISS
+from langchain.text_splitter import CharacterTextSplitter
 
 # from CustomLLM import *
-# llm = CustomLLM()
+# llm = CustomLLM() <<- use a custom LLM
 
 with open('website/sprunger_resume.txt') as f:
     file_text_resume = f.read()
 with open('website/about_this_app.txt') as f:
     file_text_about = f.read()
-with open('website/work_and_life.txt') as f:
+with open('website/biographical.txt') as f:
     file_text_bio = f.read()
+with open('website/interview_faq.txt') as f:
+    file_text_faq = f.read()
+
 sources = [
-            Document(page_content=file_text_resume, metadata={"source": "Joel's resume"}),
-            Document(page_content=file_text_about, metadata={"source": "About"}),
-            Document(page_content=file_text_bio, metadata={"source": "Biographical info"})
+            Document(page_content=file_text_about, metadata={"source": "About this app"}),
+            # Document(page_content=file_text_faq, metadata={"source": "Interview FAQ"}),
+            Document(page_content=file_text_bio, metadata={"source": "Biographical info"}),
+            Document(page_content=file_text_resume, metadata={"source": "Joel's resume"})
            ]
+
+source_chunks = []
+splitter = CharacterTextSplitter(separator=" ", chunk_size=1024, chunk_overlap=0)
+for source in sources:
+    for chunk in splitter.split_text(source.page_content):
+        source_chunks.append(Document(page_content=chunk, metadata=source.metadata))
+
+search_index = FAISS.from_documents(source_chunks, OpenAIEmbeddings())
 
 # chain = load_qa_with_sources_chain(llm)
 chain = load_qa_with_sources_chain(OpenAI(temperature=0))
@@ -29,7 +44,7 @@ def string_answer(question, test: Union[str, None] = None) -> str:
     return str(
         chain(
             {
-                "input_documents": sources,
+                "input_documents": search_index.similarity_search(question, k=4),
                 "question": question,
             },
             return_only_outputs=True,

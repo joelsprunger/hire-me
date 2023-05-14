@@ -1,8 +1,7 @@
-from flask import render_template, Blueprint, flash, send_from_directory, session
+from flask import render_template, Blueprint, flash, send_from_directory, session, url_for
 from .forms import QuestionForm, EmailForm
 from ..ai_service.ai_answers import string_answer
 from .. import mail, Message
-from random import randint as randi
 
 core = Blueprint("core", __name__)
 
@@ -12,14 +11,32 @@ start: bool = True
 intro_message: bool = True
 
 
-@core.route("/", methods=["GET", "POST"])
-def index():
-    # initialize new session
+def session_init() -> None:
+    # initialize new session variables
+    resume_link = url_for("core.download_resume")
+    about_link = url_for("core.about")
+    github_link = "https://github.com/joelsprunger/personal-website"
+    garden_link = "https://www.instagram.com/portlandgarden/"
+    session["html_links"] = {
+            "Joel's resume": f'<a href={resume_link} target="_blank">Joel''s resume</a>',
+            "About this app": f'<a href={about_link}>About</a>',
+            "GitHub": f'<a href={github_link} target="_blank">GitHub</a>',
+            "Gardening": f'<a href={garden_link} target="_blank">Gardening</a>',
+            "gardening": f'<a href={garden_link} target="_blank">gardening</a>',
+            "Garden": f'<a href={garden_link} target="_blank">Garden</a>',
+            "garden": f'<a href={garden_link} target="_blank">garden</a>'}
+
     if "questions" not in session.keys():
         session["questions"]: dict = {}
     if "qa_list" not in session.keys():
         session["qa_list"]: list = []
 
+
+@core.route("/", methods=["GET", "POST"])
+def index():
+    # session.clear()
+    if "html_links" not in session.keys():
+        session_init()
     form = QuestionForm()
     email_form = EmailForm()
     if session["questions"]:
@@ -34,6 +51,12 @@ def index():
         # check for repeated question
         if question not in session["questions"]:
             answer = string_answer(question)
+            for word, link in session["html_links"].items():
+                if word+"ing" in answer:
+                    continue  # don't replace gardening with <garden>ing
+                else:
+                    answer = answer.replace(word, link)
+
             session["questions"][question] = answer
         answer = session["questions"][question]
         flash(answer)
