@@ -14,10 +14,13 @@ Skills
 	Programming Languages: Python, C/C++, Matlab, VB
     Frameworks: Tensorflow, Pytorch
     Libraries: Keras, Pandas, NumPy, Matplotlib, Seaborn, Soundfile, Librosa
-    IT: Linux, Mac OS, windows, Shell Scripting, Productivity Suites (Excel, Outlook, etc)
-    Dev Tools: Visual Code Studio, PyCharm, CLion, Git, Github, Docker
+    IT: Linux, macOS, windows, Shell Scripting, Productivity Suites (Excel, Outlook, etc)
+    Dev Tools: VS Code, PyCharm, CLion, Git, Github, Docker
     ML: Linear Regression, Logistic Regression, Gradient Descent, Optimum Algorithms, K-means Clustering, Recommendation Systems, Anomaly Detection, Support Vector Machines, AWS, Amazon Mechanical Turk
     Signal Processing: Spectral Analysis (FFT, PSD), STFT, WOLA, Digital Filters, Adaptive Filters, State Space Tracking, Image Processing, Array Processing, Communication Systems: AM/FM/PM, FSK, PSK, CDMA, Audio Signal Processing: AEC, Beamforming, Noise Suppression, ANC, Noise Gate, AGC.
+
+Joel does not have the following skills
+    JavaScript, React, Kubernetes, Java, Scala, R
 
 Professional Experience
 Staff Machine Learning Engineer, Skyworks Solutions Inc.
