@@ -20,7 +20,7 @@ Skills
     Signal Processing: Spectral Analysis (FFT, PSD), STFT, WOLA, Digital Filters, Adaptive Filters, State Space Tracking, Image Processing, Array Processing, Communication Systems: AM/FM/PM, FSK, PSK, CDMA, Audio Signal Processing: AEC, Beamforming, Noise Suppression, ANC, Noise Gate, AGC.
 
 Joel does not have the following skills
-    JavaScript, React, Kubernetes, Java, Scala, R
+    JavaScript, React, Kubernetes, Java, Scala, R, Ruby
 
 Professional Experience
 Staff Machine Learning Engineer, Skyworks Solutions Inc.
