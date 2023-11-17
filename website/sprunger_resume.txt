@@ -4,25 +4,38 @@ Contact
     email: sprunger.joel@gmail.com
 
 Summary
-Staff Engineer with an MS in Electrical and Computer Engineering and history of innovation in signal processing
-and machine learning across industries. Determined, analytical, and knowledgeable problem-solver with proficiency
-in Python, Matlab, C/C++, Verilog/VHDL, and LabVIEW with strong cross-functional teamwork and relationship
-building skills. Seeking to leverage talents in a DSP engineering role at a future-forward company to build innovative
-products and consumer experiences. Always curious, and not afraid of hard work.
+    Staff Engineer with an MS in Electrical and Computer Engineering and history of innovation in signal processing
+    and machine learning across industries. Determined, analytical, and knowledgeable problem-solver with proficiency
+    in Python, Matlab, C/C++, Verilog/VHDL, and LabVIEW with strong cross-functional teamwork and relationship
+    building skills. Seeking to leverage talents in a DSP engineering role at a future-forward company to build innovative
+    products and consumer experiences. Always curious, and not afraid of hard work.
 
 Skills
-	Programming Languages: Python, C/C++, Matlab, VB
-    Frameworks: Tensorflow, Pytorch
-    Libraries: Keras, Pandas, NumPy, Matplotlib, Seaborn, Soundfile, Librosa
-    IT: Linux, macOS, windows, Shell Scripting, Productivity Suites (Excel, Outlook, etc)
-    Dev Tools: VS Code, PyCharm, CLion, Git, Github, Docker
-    ML: Linear Regression, Logistic Regression, Gradient Descent, Optimum Algorithms, K-means Clustering, Recommendation Systems, Anomaly Detection, Support Vector Machines, AWS, Amazon Mechanical Turk
-    Signal Processing: Spectral Analysis (FFT, PSD), STFT, WOLA, Digital Filters, Adaptive Filters, State Space Tracking, Image Processing, Array Processing, Communication Systems: AM/FM/PM, FSK, PSK, CDMA, Audio Signal Processing: AEC, Beamforming, Noise Suppression, ANC, Noise Gate, AGC.
+    Programming Languages: Python, C/C++, Matlab, VB
+    Machine Learning & AI: TensorFlow, PyTorch, Keras, Linear Regression, Logistic Regression, Gradient Descent, Optimum Algorithms, K-means Clustering, Recommendation Systems, Anomaly Detection, Support Vector Machines, Computer Vision, NLP, LLM chains and agents.
+    Signal Processing: Spectral Analysis (FFT, PSD), STFT, WOLA, Digital Filters, Adaptive Filters, State Space Tracking, Image Processing, Array Processing, Communication Systems (AM/FM/PM, FSK, PSK, CDMA), Audio Signal Processing (AEC, Beamforming, Noise Suppression, ANC, Noise Gate, AGC)
+    Frameworks & Libraries: Flask, Fast API, Pandas, NumPy, Matplotlib, Seaborn, Soundfile, Librosa, Huggingface, Langchain, Autogen, Ollama
+    Development Tools: VS Code, PyCharm, CLion, Git, GitHub, Docker, AWS, GCP, Amazon Mechanical Turk
+    Hardware & PCB Design: PCB Capture/Layout, HW/SW Debugging, CPU Design, Microphone Array Design, Circuit Analysis, LTSpice, Soldering
+    Operating Systems & IT Skills: Linux, macOS, Windows, Shell Scripting, Productivity Suites (Excel, Outlook, etc.)
 
 Joel does not have the following skills
-    JavaScript, React, Kubernetes, Java, Scala, R
+    Kubernetes, Java, Scala, R, snowflake
+
+Joel is a novice in the following skills
+    Javascript, React, Next.js
 
 Professional Experience
+
+Machine Learning Engineer, Lender Toolkit
+Remote (United States) June 2023 – Present
+    • Deployed an open-source chat application using Next.js (React framework) for the frontend, hosted on Vercel.
+    • Developed the backend using FastAPI and Python, deployed on AWS Fargate.
+    • Managed storage of OpenAI text embeddings using Supabase.
+    • Implemented auto-login functionality and refactored chat descriptions for AI-summarized questions.
+    • Developed and integrated new feedback-related columns, and user usage tracking in the Supabase database schema.
+    • Created frontend UI components for collecting user feedback, enhancing user interaction.
+
 Staff Machine Learning Engineer, Skyworks Solutions Inc.
 Hillsboro, OR — 2019-2023
     • Developed machine learning models using Python, Tensorflow, Keras, and Pytorch for audio Noise Suppression
