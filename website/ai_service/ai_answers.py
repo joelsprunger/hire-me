@@ -1,10 +1,10 @@
 from typing import Union
-from langchain.chains.qa_with_sources import load_qa_with_sources_chain
-from langchain.docstore.document import Document
-from langchain.llms import OpenAI
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores.faiss import FAISS
-from langchain.text_splitter import CharacterTextSplitter
+
+from langchain.chains.qa_with_sources.loading import load_qa_with_sources_chain
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_text_splitters import CharacterTextSplitter
 
 # from CustomLLM import *
 # llm = CustomLLM() <<- use a custom LLM
@@ -34,7 +34,7 @@ for source in sources:
 search_index = FAISS.from_documents(source_chunks, OpenAIEmbeddings())
 
 # chain = load_qa_with_sources_chain(llm)
-chain = load_qa_with_sources_chain(OpenAI(temperature=0))
+chain = load_qa_with_sources_chain(ChatOpenAI(model="gpt-4", temperature=0))
 
 
 def string_answer(question, test: Union[str, None] = None) -> str:
@@ -53,5 +53,5 @@ def string_answer(question, test: Union[str, None] = None) -> str:
 
 
 if __name__ == "__main__":
-    print(string_answer("Where did Joel attend school while working at Maxim?"))
+    print(string_answer("Where did Joel attend school?"))
 
